@@ -73,6 +73,7 @@ class Story(object):
         self.summary = soup.find('div', class_='summary_text_fic3').text
         self.summary = self.summary.strip()
         temp = head_block.find('div', class_='title', string=AUTHORS_RE)
+        self.is_a_translation = False
         if temp is None:
             temp = head_block.find('div', class_='title', string=TRANSLATORS_RE)
             self.is_a_translation = True
